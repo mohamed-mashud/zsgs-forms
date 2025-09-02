@@ -126,12 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <select name="education-level[]" class="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
                         <option value="">Select Level</option>
                         <option value="High School">High School</option>
-                        <option value="Associate">Associate Degree</option>
                         <option value="Bachelor">Bachelor's Degree</option>
                         <option value="Master">Master's Degree</option>
                         <option value="Doctorate">Doctorate</option>
                         <option value="Diploma">Diploma</option>
-                        <option value="Certificate">Certificate</option>
                     </select>
                 </div>
             </div>
