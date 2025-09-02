@@ -1,6 +1,3 @@
-/**
- *
- * uncomment this in prod need for data security 
 document.addEventListener("contextmenu", (e) => e.preventDefault());
 
 // Disable some common DevTools shortcuts
@@ -13,7 +10,6 @@ document.addEventListener("keydown", (e) => {
         e.preventDefault();
     }
 });
-*/
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log("running")
@@ -102,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         if (validatePage1() && validatePage2()) {
-            alert('Form submitted successfully!');
+            alert('Form submitted successfully & will be reloaded in 5 sec  ');
+            setTimeout(function(){ location.reload(); }, 5000);
             // TODO: can send to serv if needed
         }
     });
@@ -125,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <label class="block text-sm font-medium text-gray-700 mb-1">Level of Education</label>
                     <select name="education-level[]" class="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" required>
                         <option value="">Select Level</option>
-                        <option value="High School">High School</option>
+                        <option value="High School">School</option>
                         <option value="Bachelor">Bachelor's Degree</option>
                         <option value="Master">Master's Degree</option>
                         <option value="Doctorate">Doctorate</option>
