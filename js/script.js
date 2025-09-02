@@ -1,15 +1,19 @@
+/**
+ *
+ * uncomment this in prod need for data security 
 document.addEventListener("contextmenu", (e) => e.preventDefault());
 
 // Disable some common DevTools shortcuts
 document.addEventListener("keydown", (e) => {
-  if (
-    e.key === "F12" || // DevTools
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || // Inspect/Console
-    (e.ctrlKey && e.key === "U") // View Source
-  ) {
-    e.preventDefault();
-  }
+    if (
+        e.key === "F12" || // DevTools
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || // Inspect/Console
+        (e.ctrlKey && e.key === "U") // View Source
+    ) {
+        e.preventDefault();
+    }
 });
+*/
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log("running")
@@ -19,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const page2 = document.getElementById('page2');
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
+    const pageNumber = document.getElementById('page-number');
     const progressBar = document.getElementById('progress-bar');
     const progressPercent = document.getElementById('progress-percent');
     const educationContainer = document.getElementById('education-container');
@@ -69,15 +74,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (validatePage1()) {
             page1.classList.remove('active');
             page2.classList.add('active');
+            pageNumber.textContent = 'Page 2/2';
             progressBar.style.width = '100%';
             progressPercent.textContent = '100%';
         }
     });
-
+    
     // Previous button click handler
     prevBtn.addEventListener('click', function() {
         page2.classList.remove('active');
         page1.classList.add('active');
+        pageNumber.textContent = 'Page 1/2';
         progressBar.style.width = '50%';
         progressPercent.textContent = '50%';
     });
