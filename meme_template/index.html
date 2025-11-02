@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Meme Caption Lab</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <h2>Meme Caption Lab</h2>
+
+    <div class="flex">
+        <div>
+            <label>Template:</label>
+            <select id="templateSelect">
+                <option value="utils/images/memes/burning_house.webp">
+                    Burning House
+                </option>
+                <option value="utils/images/memes/doge.jpg">Doge</option>
+                <option value="utils/images/memes/guy_looking_what.jpeg">
+                    Guy Looking
+                </option>
+                <option value="utils/images/memes/thumbs_up_cat.jpeg">
+                    Thumbs Up Cat
+                </option>
+                <option value="utils/images/memes/yes_baby.webp">
+                    Yes Baby
+                </option>
+            </select><br />
+
+            <label>Caption:</label>
+            <input type="text" id="captionInput" placeholder="Enter a caption..." /><br />
+            <button onclick="addMeme()">Add Meme</button>
+        </div>
+
+        <div>
+            <label>Preview</label>
+            <div id="previewBox">
+                <img id="previewImage" src="utils/images/memes/burning_house.webp" />
+            </div>
+        </div>
+    </div>
+
+    <h3>Meme List</h3>
+    <div id="memeList"></div>
+
+    <template id="memeCard">
+        <div class="meme-item">
+            <img class="meme-img" />
+            <div class="meme-caption"></div>
+            <button class="editBtn">Edit</button>
+            <button class="deleteBtn" style="background: #ff4d4d; margin-top: 5px">
+                Delete
+            </button>
+        </div>
+    </template>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

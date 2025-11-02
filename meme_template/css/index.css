@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #121212;
+  color: #f0f0f0;
+}
+h2 {
+  color: #4db2ff;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+select,
+input,
+button {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 8px;
+}
+button {
+  cursor: pointer;
+  font-weight: bold;
+  background: #4db2ff;
+  color: white;
+}
+button:hover {
+  opacity: 0.85;
+}
+
+#previewBox {
+  width: 350px;
+  height: 350px;
+  background: #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  resize: both;
+  border: 2px solid #4db2ff;
+  padding: 4px;
+}
+#previewBox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ✅ Meme grid 5 per row */
+#memeList {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 900px) {
+  #memeList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #memeList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.meme-item {
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.meme-item img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  object-fit: contain;
+}
