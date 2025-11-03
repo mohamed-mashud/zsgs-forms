@@ -4,6 +4,9 @@ const previewImage = document.getElementById("previewImage");
 const memeList = document.getElementById("memeList");
 const memeTemplate = document.getElementById("memeCard");
 const captionError = document.getElementById("errorCaption");
+const errors = {
+    caption : document.getElementById("errorCaption")
+};
 
 let memes = [];
 
@@ -14,16 +17,27 @@ templateSelect.addEventListener("change", () => {
 function addMeme() {
     let captionText = captionInput.value;
     if(captionText.trim() === "") {
-        showCaptionError();
+        showError("caption");
         return;
-    }
+    } 
+
+    removeError();
     memes.push({ img: templateSelect.value, caption: captionText });
     renderMemes();
     captionInput.value = "";
 }
 
-function showCaptionError() {
+function showError(field) {
+    const messages = {
+        caption : "Enter a valid caption"
+    }
+    errors[field].textContent = messages[field];
+}
 
+function removeError() {
+    for (let key in errors) {
+        errors[key].textContent = '';
+    }
 }
 
 function renderMemes() {
