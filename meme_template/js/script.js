@@ -3,6 +3,7 @@ const captionInput = document.getElementById("captionInput");
 const previewImage = document.getElementById("previewImage");
 const memeList = document.getElementById("memeList");
 const memeTemplate = document.getElementById("memeCard");
+const captionError = document.getElementById("errorCaption");
 
 let memes = [];
 
@@ -11,9 +12,18 @@ templateSelect.addEventListener("change", () => {
 });
 
 function addMeme() {
-    memes.push({ img: templateSelect.value, caption: captionInput.value });
+    let captionText = captionInput.value;
+    if(captionText.trim() === "") {
+        showCaptionError();
+        return;
+    }
+    memes.push({ img: templateSelect.value, caption: captionText });
     renderMemes();
     captionInput.value = "";
+}
+
+function showCaptionError() {
+
 }
 
 function renderMemes() {

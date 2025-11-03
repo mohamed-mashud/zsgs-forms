@@ -4,6 +4,7 @@ body {
   background: #121212;
   color: #f0f0f0;
 }
+
 h2 {
   color: #4db2ff;
 }
@@ -11,6 +12,12 @@ h2 {
 .flex {
   display: flex;
   gap: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 5px;
 }
 
 select,
@@ -21,12 +28,14 @@ button {
   border: none;
   margin-bottom: 8px;
 }
+
 button {
   cursor: pointer;
   font-weight: bold;
   background: #4db2ff;
   color: white;
 }
+
 button:hover {
   opacity: 0.85;
 }
@@ -44,6 +53,7 @@ button:hover {
   border: 2px solid #4db2ff;
   padding: 4px;
 }
+
 #previewBox img {
   max-width: 100%;
   max-height: 100%;
